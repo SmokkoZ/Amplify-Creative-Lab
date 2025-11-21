@@ -346,3 +346,128 @@ ul { list-style: none; }
     color: var(--color-blue);
     letter-spacing: 2px;
 }
+
+/* --- 9. CONTACT FORM SECTION --- */
+.contact-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-cream);
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Form Grid: 2 Columns on Desktop */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+}
+
+/* Make Message box and Button span both columns */
+.full-width {
+    grid-column: span 2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--color-navy);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #e1e8ed; /* Light grey border */
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: #f9fafb;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+/* Focus State: When you click inside a box */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-blue);
+    background-color: #ffffff;
+}
+
+.btn-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Mobile Layout for Form */
+@media (max-width: 600px) {
+    .contact-form { padding: 20px; }
+    
+    /* Stack everything in 1 column on mobile */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width {
+        grid-column: auto;
+    }
+}
+
+/* --- 10. FOOTER --- */
+.site-footer {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 40px 0;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copyright p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--color-white);
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-socials a:hover {
+    color: var(--color-blue);
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Footer Mobile */
+@media (max-width: 600px) {
+    .footer-flex {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

@@ -619,3 +619,132 @@ img {
         text-align: center;
     }
 }
+
+/* =========================================
+   11. PORTFOLIO PAGE STYLES
+   ========================================= */
+
+/* Page Header (Navy Background) */
+.page-header {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 0;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    color: var(--color-white);
+    font-family: var(--font-heading-serif);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+}
+
+/* Filters */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-navy);
+    color: var(--color-navy);
+    padding: 8px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-heading-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+/* Masonry-style Grid */
+.portfolio-grid {
+    columns: 3 280px; /* CSS Masonry Magic: 3 columns, min-width 280px */
+    column-gap: 20px;
+}
+
+.gallery-item {
+    break-inside: avoid; /* Prevents images from being cut in half */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 0.3s ease; /* For the filtering fade effect */
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Overlay Effect */
+.gallery-item .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(25, 42, 61, 0.8); /* Navy transparent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    text-align: center;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item h3 {
+    color: white;
+    font-family: var(--font-heading-serif);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item span {
+    color: var(--color-blue);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s; /* Slight delay */
+}
+
+.gallery-item:hover h3,
+.gallery-item:hover span {
+    transform: translateY(0);
+}
+
+/* Mobile Adjustments for Portfolio */
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2.5rem; }
+    .portfolio-grid { columns: 1; } /* Single column on mobile */
+}

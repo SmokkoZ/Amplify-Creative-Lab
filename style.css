@@ -748,3 +748,77 @@ img {
     .page-header h1 { font-size: 2.5rem; }
     .portfolio-grid { columns: 1; } /* Single column on mobile */
 }
+
+/* =========================================
+   12. SERVICES PAGE STYLES
+   ========================================= */
+
+.service-block {
+    padding: 80px 0;
+    background-color: var(--color-cream);
+}
+
+.alt-bg {
+    background-color: white; /* Creates separation between sections */
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Reverses order for the 2nd item */
+.flex-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-col {
+    flex: 1;
+}
+
+.img-col {
+    flex: 1;
+}
+
+.img-col img {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.img-col:hover img {
+    transform: translateY(-10px);
+}
+
+.text-col h2 {
+    font-family: var(--font-heading-serif);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    margin: 25px 0 35px 0;
+    padding-left: 20px;
+}
+
+.service-list li {
+    list-style: disc; /* Adds bullet points */
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--color-navy);
+}
+
+/* Mobile Adjustments for Services */
+@media (max-width: 900px) {
+    .flex-row, .flex-row.reverse {
+        flex-direction: column-reverse; /* Stacks image on top of text on mobile */
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .service-list {
+        list-style: none; /* Removes bullets on mobile center alignment */
+        padding: 0;
+    }
+}

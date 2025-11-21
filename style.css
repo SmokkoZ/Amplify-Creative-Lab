@@ -3,26 +3,25 @@
    ========================================= */
 /* In style.css */
 :root {
-    /* BRAND COLORS */
+    /* --- BRAND COLORS --- */
     --color-cream: #FEF8EB;       /* Main Background */
-    --color-green-dark: #1A2C1D;  /* The Dark Green from screenshots */
-    --color-green-light: #2F4A35; /* Lighter green for accents */
-    --color-navy: #1A2C1D;        /* Replacing Navy with the Green for text */
-    --color-slate: #4A5A4E;       /* Secondary text */
+    --color-green-dark: #1A2C1D;  /* Dark Green (Replaces Blue/Navy) */
+    --color-green-light: #2F4A35; /* Lighter Green for Hovers */
+    --color-slate: #4A5A4E;       /* Secondary Text */
     --color-white: #ffffff;
     --color-border: #dcd6c8;
 
-    /* FONTS */
+    /* --- FONTS --- */
     --font-heading-serif: 'Abril Fatface', serif;
     --font-heading-sans: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
-    /* SPACING */
+    /* --- SPACING & RADIUS --- */
     --spacing-container: 40px;
     --spacing-section: 100px;
-    --radius-btn: 0px; /* Your design uses sharp or slightly rounded corners, not pills */
+    --radius-card: 12px;
+    --radius-btn: 4px; /* Sharper corners like your screenshots */
 }
-
 /* =========================================
    2. GLOBAL RESET & BASE STYLES
    ========================================= */
@@ -112,25 +111,31 @@ img {
     font-size: 12px;
     letter-spacing: 2px;
     color: var(--color-green-dark);
+    transition: color 0.3s ease; /* Makes the hover smooth */
+}
+
+/* THIS IS THE PART YOU WERE MISSING */
+.nav-list a:hover {
+    color: var(--color-green-light); 
+}
+
+/* Work With Us Button in Nav */
+.btn-nav {
+    border: 2px solid var(--color-green-dark); /* Changed from Navy */
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: var(--color-green-dark); /* Ensure text is green */
+}
+
+.btn-nav:hover {
+    background-color: var(--color-green-dark); /* Changed from Navy */
+    color: var(--color-white) !important;
 }
 
 /* Hide split nav on mobile */
 @media (max-width: 768px) {
     .desktop-only { display: none; }
     .logo { position: static; transform: none; margin-right: auto; }
-    /* You will need to add a mobile menu container in JS/HTML if you want mobile menu to work differently */
-}
-
-/* Work With Us Button in Nav */
-.btn-nav {
-    border: 2px solid var(--color-navy);
-    padding: 8px 20px;
-    border-radius: 4px;
-}
-
-.btn-nav:hover {
-    background-color: var(--color-navy);
-    color: var(--color-white) !important;
 }
 
 /* =========================================
@@ -167,19 +172,27 @@ img {
 }
 
 /* The Green Pill Button */
+/* Primary Button Style */
 .btn-primary {
-    background-color: var(--color-green-dark);
-    color: white;
-    border-radius: 50px;
-    padding: 15px 40px;
-    font-size: 12px;
+    background-color: var(--color-green-dark); /* CHANGED FROM BLUE */
+    color: var(--color-white);
+    padding: 16px 45px;
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: none; /* Remove shadow for flat look */
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Removed the blue shadow */
+    box-shadow: 0 5px 15px rgba(26, 44, 29, 0.2); 
 }
 
 .btn-primary:hover {
-    background-color: var(--color-green-light);
-    transform: none;
+    background-color: var(--color-green-light); /* CHANGED FROM BLUE DARK */
+    transform: translateY(-2px);
 }
 
 /* Simple Collage Styling */

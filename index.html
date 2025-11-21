@@ -19,39 +19,48 @@
 <body>
 
     <header class="site-header">
-        <div class="container header-flex">
-            <a href="https://smokkoz.github.io/Amplify-Creative-Lab/" class="logo">
-                <img src="https://amplifycreativelab.com/wp-content/uploads/2024/07/logo-web.png"
-                    alt="Amplify Creative Lab Logo">
-            </a>
+    <div class="container header-flex">
+        <nav class="nav-left desktop-only">
+            <ul class="nav-list">
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
 
-            <nav class="main-nav">
-                <button class="mobile-toggle" aria-label="Open Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+        <a href="index.html" class="logo">
+            <img src="https://amplifycreativelab.com/wp-content/uploads/2024/07/logo-web.png" alt="Amplify">
+        </a>
 
-                <ul class="nav-list">
-                    <li><a href="https://smokkoz.github.io/Amplify-Creative-Lab/">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="#contact" class="btn-nav">Work With Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <nav class="nav-right desktop-only">
+            <ul class="nav-list">
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <button class="mobile-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
 
     <main>
         <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="container hero-content">
-                <h1>Growing a business isn't easy,<br> but we've got your back.</h1>
-                <p>We are a full-service creative studio specialising in food photography, digital content creation, and
-                    social media management in Perth.</p>
-                <a href="#contact" class="btn-primary">Start Your Project</a>
-            </div>
-        </section>
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h1>Growing a business isn't easy,<br> but we've got your back.</h1>
+            <a href="#contact" class="btn-primary">Work With Us</a>
+        </div>
+        
+        <div class="hero-collage">
+            <img src="https://amplifycreativelab.com/wp-content/uploads/2024/06/Spaghertti-Carbonara_01-scaled.jpg" class="collage-1" alt="">
+            <img src="https://amplifycreativelab.com/wp-content/uploads/2024/07/DSC_3474-768x960.jpg" class="collage-2" alt="">
+            <img src="https://amplifycreativelab.com/wp-content/uploads/2024/06/04-Digital-Content-Creative-768x960.jpg" class="collage-3" alt="">
+        </div>
+    </div>
+</section>
 
         <section class="services">
             <div class="container">

@@ -1,37 +1,26 @@
 /* =========================================
    1. VARIABLES (YOUR BRAND DNA)
    ========================================= */
+/* In style.css */
 :root {
-    /* COLORS (Extracted from your source code) */
-    --color-cream: #FEF8EB;
-    /* Background */
-    --color-blue: #2872fa;
-    /* Buttons/Accents */
-    --color-blue-dark: #1559ed;
-    /* Hover states */
-    --color-navy: #192a3d;
-    /* Headings/Text */
-    --color-slate: #3A4F66;
-    /* Secondary Text */
+    /* BRAND COLORS */
+    --color-cream: #FEF8EB;       /* Main Background */
+    --color-green-dark: #1A2C1D;  /* The Dark Green from screenshots */
+    --color-green-light: #2F4A35; /* Lighter green for accents */
+    --color-navy: #1A2C1D;        /* Replacing Navy with the Green for text */
+    --color-slate: #4A5A4E;       /* Secondary text */
     --color-white: #ffffff;
-    --color-border: #e1e8ed;
-    /* Form borders */
+    --color-border: #dcd6c8;
 
     /* FONTS */
     --font-heading-serif: 'Abril Fatface', serif;
-    /* For "Amplify Creative Lab" */
     --font-heading-sans: 'Montserrat', sans-serif;
-    /* For Menu/Headings */
     --font-body: 'Montserrat', sans-serif;
-    /* For paragraphs */
-    --font-accent: 'Darker Grotesque', sans-serif;
-    /* Optional accent */
 
     /* SPACING */
-    --spacing-container: 25px;
-    --spacing-section: 80px;
-    --radius-card: 12px;
-    --radius-btn: 50px;
+    --spacing-container: 40px;
+    --spacing-section: 100px;
+    --radius-btn: 0px; /* Your design uses sharp or slightly rounded corners, not pills */
 }
 
 /* =========================================
@@ -103,44 +92,33 @@ img {
 /* =========================================
    3. HEADER & NAVIGATION
    ========================================= */
-.site-header {
-    padding: 15px 0;
-    background-color: var(--color-cream);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
-
 .header-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+    justify-content: center; /* Center everything */
+    position: relative;
 }
 
-.logo img {
-    height: 55px;
-    width: auto;
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .nav-list {
-    display: flex;
-    gap: 35px;
+    gap: 60px; /* More space between items */
 }
 
 .nav-list a {
-    font-family: var(--font-heading-sans);
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-navy);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--color-green-dark);
 }
 
-.nav-list a:hover {
-    color: var(--color-blue);
+/* Hide split nav on mobile */
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+    .logo { position: static; transform: none; margin-right: auto; }
+    /* You will need to add a mobile menu container in JS/HTML if you want mobile menu to work differently */
 }
 
 /* Work With Us Button in Nav */
@@ -159,90 +137,67 @@ img {
    4. HERO SECTION
    ========================================= */
 .hero {
-    position: relative;
-    height: 85vh;
-    min-height: 600px;
+    background-color: var(--color-cream);
+    height: auto;
+    min-height: 80vh;
+    padding-top: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #000;
-    overflow: hidden;
+    overflow: visible; /* Allow images to overlap */
 }
 
-/* Background Zoom Animation */
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://amplifycreativelab.com/wp-content/uploads/2024/06/Spaghertti-Carbonara_01-scaled.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.6;
-    /* Dark overlay */
-    animation: zoomEffect 20s infinite alternate;
+.hero-bg { display: none; } /* Remove old zoom background */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
 }
 
-@keyframes zoomEffect {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 0 20px;
-}
-
-.hero h1 {
+.hero-text h1 {
     font-family: var(--font-heading-sans);
-    font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3.8rem);
-    /* Fluid typography */
+    font-weight: 300; /* Much thinner font */
+    color: var(--color-slate);
+    font-size: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    margin-bottom: 30px;
-    color: var(--color-white);
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    letter-spacing: 3px;
+    line-height: 1.4;
+    text-align: left;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-}
-
-/* Primary Button Style */
+/* The Green Pill Button */
 .btn-primary {
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    padding: 16px 45px;
-    border-radius: var(--radius-btn);
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(40, 114, 250, 0.3);
-    transition: transform 0.2s, background-color 0.2s;
+    background-color: var(--color-green-dark);
+    color: white;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    box-shadow: none; /* Remove shadow for flat look */
 }
 
 .btn-primary:hover {
-    background-color: var(--color-blue-dark);
-    transform: translateY(-3px);
+    background-color: var(--color-green-light);
+    transform: none;
 }
+
+/* Simple Collage Styling */
+.hero-collage {
+    position: relative;
+    height: 500px;
+}
+
+.hero-collage img {
+    position: absolute;
+    border: 10px solid white; /* Polaroid effect */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 200px;
+}
+
+.collage-1 { top: 0; right: 50px; transform: rotate(5deg); z-index: 2; }
+.collage-2 { top: 150px; right: 180px; transform: rotate(-8deg); z-index: 1; }
+.collage-3 { bottom: 50px; right: 20px; transform: rotate(3deg); z-index: 3; }
 
 /* =========================================
    5. SERVICES SECTION
@@ -307,34 +262,35 @@ img {
    6. ABOUT INTRO SECTION
    ========================================= */
 .about-intro {
-    padding: 40px 0 80px 0;
-    text-align: center;
-    background-color: var(--color-cream);
+    background-color: var(--color-green-dark);
+    color: white;
+    padding: 100px 0;
 }
 
 .about-intro h2 {
+    color: white;
     font-family: var(--font-heading-serif);
-    /* Abril Fatface */
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    line-height: 1.1;
+    font-size: 4rem;
 }
 
 .about-intro h3 {
-    font-family: var(--font-heading-sans);
-    color: var(--color-blue);
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
+    color: rgba(255,255,255,0.8); /* Faded white */
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    text-transform: none;
 }
 
 .about-text-block {
-    max-width: 750px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-    color: var(--color-slate);
+    font-family: var(--font-heading-serif); /* The screenshot uses italic serif here */
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: white;
+    line-height: 1.4;
+    max-width: 900px;
 }
 
 /* =========================================

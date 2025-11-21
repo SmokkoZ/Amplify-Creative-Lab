@@ -154,3 +154,73 @@ ul { list-style: none; }
     .nav-list { display: none; } /* Hidden on mobile for now */
     .hero h1 { font-size: 2rem; }
 }
+
+/* --- 6. SERVICES SECTION --- */
+.services {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-cream); /* seamless blend with body */
+}
+
+.section-title {
+    font-family: var(--font-body); /* Or var(--font-heading) if you want the fancy font here */
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-navy);
+    letter-spacing: 2px;
+}
+
+/* The Grid System: Creates 3 columns that stack automatically */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+/* The Card */
+.service-card {
+    display: block;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Floats up when you hover */
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    aspect-ratio: 3 / 4; /* Forces all images to be the same tall rectangle shape */
+    margin-bottom: 20px;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box without stretching */
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05); /* Subtle zoom effect on image */
+}
+
+/* The Label (Looks like a button) */
+.card-label {
+    display: inline-block;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(40, 114, 250, 0.3);
+}

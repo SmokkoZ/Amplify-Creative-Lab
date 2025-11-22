@@ -1,0 +1,1 @@
+The goal of this repository is to make a perfect clone (html, css,js) of the original website, currently made using Wordpress and Elementor, which cause low performance and bloat. The original website is:https://amplifycreativelab.com/
